@@ -17,7 +17,7 @@ int main()
     cin >> diametr;
     float PI = 3.14;
 
-    cout << "длина окружности равна - " << PI * diametr <<"\n"<< endl;
+    cout << "длина окружности равна - " << PI * diametr << "\n" << endl;
 
     cout << "Введите 2 числа" << endl;
 
@@ -26,7 +26,7 @@ int main()
     cin >> first;
     cin >> second;
 
-    cout << "Среднее арифметическое этих чисел = " << (first + second) / 2 <<"\n"<< endl;
+    cout << "Среднее арифметическое этих чисел = " << (first + second) / 2 << "\n" << endl;
 
     cout << "введите 2 ненулевых числа\n";
     float zerofirst, zerosecond;
@@ -35,7 +35,21 @@ int main()
 
 
     cout << "сумма =" << zerofirst + zerosecond << "\t" << "разность =" << zerofirst - zerosecond << "\t " << "произведение =" << zerofirst * zerosecond << endl;
-    cout << "частное их квадратов = " << (zerofirst * zerofirst) / (zerosecond * zerosecond) << "\n" << "частное их модулей =" << (abs(zerofirst) / abs(zerosecond));
+    cout << "частное их квадратов = " << (zerofirst * zerofirst) / (zerosecond * zerosecond) << endl;
     cout << "\n";
+
+    cout << "введите 2 новых ненулевых числа" << endl;
+    cin >> zerofirst;
+    cin >> zerosecond;
+
+    float modulfirst, modulsecond;
+
+    modulfirst = abs(zerofirst);
+    modulsecond = abs(zerosecond);
+
+    cout << "Сумма модулей = " << modulfirst + modulsecond << "\t" << "разность модулей = " << modulfirst - modulsecond<<"\t" << "произведение модулей = " << modulfirst * modulsecond <<"\t" << "частное модулей = " << modulfirst / modulsecond << endl;
+
+
     return 0;
 }
+
