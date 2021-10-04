@@ -1,0 +1,80 @@
+#include <iostream>
+#include <stdbool.h>
+#include <ctime>
+#include <string>
+
+using namespace std;
+int main()
+{
+	srand(time(NULL));
+	setlocale(LC_ALL, "ru");
+
+	long int sek, No;
+	long int a,a1, b,b1, c,h,x;
+	long int dlin = 0, shir = 0, kolvo;
+	
+	cout << "введите  количество сеукнд прошедших с начала суток" << endl;
+	cout << "sek = "; cin >> sek;
+	cout << sek - (int(sek / 60) * 60) << " секунд прошло с начала последней минуты" << endl;
+	cout << "______________________________________________________________________________________\n";
+	string arr[390];
+	for (int i = 0; i < 365 - 6; i += 7)
+	{
+		arr[i] = "понедельник";
+		arr[i + 1] = "вторник";
+		arr[i + 2] = "среда";
+		arr[i + 3] = "четверг";
+		arr[i + 4] = "пятница";
+		arr[i + 5] = "суббота";
+		arr[i + 6] = "воскресенье";
+	}
+	arr[365] = "вторник";
+	arr[364] = "понедельник";
+	/*for (int p = 0; p < 365; p++)
+	{
+		cout << arr[p] << "  ";
+	}
+
+	*/
+	cout << "\n\n";
+	cout << "введите номер дня" << endl;
+	cout << "No = "; cin >> No;
+	cout << No << " день это " << arr[No] << endl;
+	cout << "____________________________________________________\n";
+	
+	int K = 0;
+	int number_day;
+	cout << "Введите число K от 1 до 365:  " << endl;
+	cout << "K = ";cin >> K;
+	number_day = (K % 7) + 1;
+	cout << "Номер недели = " << number_day << endl;
+	cout << "____________________________________________________\n";
+	
+	cout << "введите A, B, C " << endl;
+	cout << "A = "; cin >> a; a1 = a;
+	cout << "B = "; cin >> b; b1 = b;
+	cout << "C = "; cin >> c;
+	while (b >= c)      // сколько раз влезет по длине
+	{
+		dlin++;
+		b -= c;
+	}
+	while (a >= c)      //сколько раз влезет по ширине
+	{
+		shir++;
+		a -= c;
+	}
+
+	cout << dlin << endl;
+	cout << shir << endl;
+	cout << "количество квадратов = " << shir * dlin << endl;
+	cout << "Оставшееся пространство = " << a1 * b1 - shir * dlin * pow(c,2) << endl;
+	cout << "____________________________________________________\n";
+	
+
+	cout << "введите номер года" << endl;
+	cout << "X = "; cin >> x;
+	cout << "Номер столетия " << x << "года: " << int(x / 100) + 1 << endl;
+	cout << "____________________________________________________\n";
+	return 0;
+}
